@@ -266,7 +266,9 @@ module Mongoid
     end
 
     def self.mongoid3?
-      ::Mongoid.const_defined? :Observer
+      # QUANTOPIAN CHANGED - Always return false.  Since we still use observers,
+      # we can't depend on whether observesr are defined.
+      false
     end
 
     private
